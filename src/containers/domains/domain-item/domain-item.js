@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './domain-item.scss';
+import {Panel} from 'react-bootstrap';
 
 
 export default class DomainItem extends Component {

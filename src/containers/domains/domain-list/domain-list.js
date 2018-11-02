@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DomainItem from '../domain-item/domain-item';
 import './domain-list.scss';
 import axios from 'axios';
+import { PanelGroup } from 'react-bootstrap';
 
 export default class DomainList extends Component {
 
