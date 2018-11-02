@@ -16,17 +16,33 @@ export default class DomainList extends Component {
             headers: {Authorization: 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmZXJuYW5kbyIsIlN1YnNjcmlwdGlvblR5cGUiOnsiaWQiOjMsIm5hbWUiOiJDb3Jwb3JhdGUiLCJudW1iZXJPZkFsbG93ZWRTZWFyY2giOi0xLCJwcmljZSI6Mjk5Ljk5fSwidXNlcklkIjoxLCJleHAiOjE1NDE0MzAzMzEsImlhdCI6MTU0MDgyNTUzMX0.nnZ9kgiV39GU3gHwN-ajS0KdHXmDezr1zPlCJ-5jr9fcUT4JfkTIuUQtPbqd4IDdS444YUj6U-wXoOCcMqwHmw'}
         })
         .then(res => {
-            const domains = res.data;
-            this.setState([domains]);
+            const domains1 = res.data.data;
+            console.log(domains1);
+
+
+
+            this.setState({domains: domains1});
+            console.log(this.state.domains)
         })
     }
 
+
+    renderList(){
+       return this.state.domains.map(domain => <DomainItem key={domain.id} domain={domain} />);
+        
+    }
+
     render(){
-        return <div>
+        return ( <div>
             <h1>Domain List</h1>
-            {this.state.domains}
-        </div>
+            <ul>
+                 {this.renderList()} 
+            </ul>
+        </div>)
     };
+
+
+  
 
 
 }
