@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import DomainItem from '../domain-item/domain-item';
 import './domain-list.scss';
 import axios from 'axios';
-import { PanelGroup } from 'react-bootstrap';
 
-export default class DomainList extends Component {
+import { withStyles } from '@material-ui/core/styles';
+
+
+const styles = theme => ({
+    root: {
+      width: '100%',
+    }
+  });
+class DomainList extends Component {
 
     state = {
         domains : []
@@ -44,12 +51,16 @@ export default class DomainList extends Component {
 
 
     render(){
-        return (<PanelGroup accordion id="panel-group">
-            {this.renderList()}
-        </PanelGroup>);
+        const { classes } = this.props;
+        return (
+            <div className={classes.root}>
+                {this.renderList()}
+            </div>
+        );
     }
 
-  
-
-
 }
+
+
+
+export default withStyles(styles)(DomainList);
