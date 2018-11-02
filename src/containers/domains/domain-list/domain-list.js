@@ -44,7 +44,7 @@ export default class DomainList extends Component {
 
 
     render(){
-        return (<PanelGroup accordion>
+        return (<PanelGroup accordion id="panel-group">
             {this.renderList()}
         </PanelGroup>);
     }
