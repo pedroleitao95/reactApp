@@ -32,15 +32,21 @@ export default class DomainList extends Component {
         
     }
 
-    render(){
-        return ( <div>
-            <h1>Domain List</h1>
-            <ul className="list-group">
-                 {this.renderList()} 
-            </ul>
-        </div>)
-    };
+    // render(){
+    //     return ( <div>
+    //         <h1>Domain List</h1>
+    //         <ul className="list-group">
+    //              {this.renderList()} 
+    //         </ul>
+    //     </div>)
+    // };
 
+
+    render(){
+        return (<PanelGroup accordion>
+            {this.renderList()}
+        </PanelGroup>);
+    }
 
   
 
