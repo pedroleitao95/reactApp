@@ -11,7 +11,7 @@ export default class DomainItem extends Component {
 
 
     render(){
-        return <li className="list-group-item">Url : {this.props.domain.url}</li>
+        return <li className="list-group-item list-group-item-action">Url : {this.props.domain.url}</li>
 
     };
 
